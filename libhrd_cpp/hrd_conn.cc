@@ -40,7 +40,7 @@ struct hrd_ctrl_blk_t* hrd_ctrl_blk_init(size_t local_hid, size_t port_index,
   assert(numa_node <= kHrdInvalidNUMANode);
 
   auto* cb = new hrd_ctrl_blk_t();
-  memset(cb, 0, sizeof(hrd_ctrl_blk_t));
+  // memset(cb, 0, sizeof(hrd_ctrl_blk_t));
 
   // Fill in the control block
   cb->local_hid = local_hid;
