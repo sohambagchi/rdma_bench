@@ -233,7 +233,8 @@ void hrd_create_dgram_qps(hrd_ctrl_blk_t* cb) {
 
   for (size_t i = 0; i < cb->num_dgram_qps; i++) {
     // Create completion queues
-    struct ibv_exp_cq_init_attr cq_init_attr;
+    // struct ibv_exp_cq_init_attr cq_init_attr;
+    auto* cq_init_attr = new ibv_exp_cq_init_attr();
     memset(&cq_init_attr, 0, sizeof(cq_init_attr));
 
     cb->dgram_send_cq[i] = ibv_exp_create_cq(
